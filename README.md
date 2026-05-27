@@ -1,10 +1,12 @@
 # Excel Reporting Dashboard Automation
 
-An Excel automation project that generates EV fleet reporting workbooks with weekly and monthly summaries, city and vehicle-level analysis, formatted sheets, and an Excel dashboard for KPI tracking and reporting.
+An end-to-end reporting automation project that generates Excel-based EV fleet reports and extends the workflow into Grafana for interactive analytics and monitoring.
 
 ## Overview
 
 This project automates EV fleet reporting using Python and Excel. It reads operational data, merges lookup data, generates weekly and monthly summaries, and exports a formatted multi-sheet Excel workbook for reporting and dashboard analysis.
+
+The project was later extended into Grafana by loading EV operations data into PostgreSQL and building an interactive dashboard for KPI tracking, operational monitoring, and filter-based exploration.
 
 ## Features
 
@@ -16,7 +18,8 @@ This project automates EV fleet reporting using Python and Excel. It reads opera
 - Vehicle-type summary
 - Excel formatting with styled headers, freeze panes, and adjusted column widths
 - Dashboard sheet with KPI cards and charts
-- Reusable reporting workflow for EV operations teams
+- Grafana dashboard extension for interactive analytics
+- Filters for city and bike type in Grafana
 
 ## Tech Stack
 
@@ -25,8 +28,8 @@ This project automates EV fleet reporting using Python and Excel. It reads opera
 - openpyxl
 - XlsxWriter
 - Microsoft Excel
-- Grafana
 - PostgreSQL
+- Grafana
 
 ## Project Structure
 
@@ -46,17 +49,19 @@ excel-reporting-dashboard-automation/
 
 ## Workflow
 
-1. Load EV operations data and lookup data.
-2. Clean and merge the datasets.
-3. Generate weekly and monthly summaries.
-4. Export results to a multi-sheet Excel workbook.
-5. Apply workbook formatting using openpyxl.
-6. Build a dashboard sheet in Excel with KPI cards and charts.
-7. Extend reporting into Grafana for interactive analytics and filtering.
+1. Load EV operations data and lookup data
+2. Clean and merge the datasets
+3. Generate weekly and monthly summaries
+4. Export results to a multi-sheet Excel workbook
+5. Apply workbook formatting using openpyxl
+6. Build a dashboard sheet in Excel with KPI cards and charts
+7. Load EV operations data into PostgreSQL
+8. Connect Grafana to PostgreSQL
+9. Build an interactive Grafana dashboard with filters and charts
 
 ## Output Sheets
 
-The generated workbook contains the following sheets:
+The generated Excel workbook contains the following sheets:
 
 - `Raw_Data`
 - `Lookup_Data`
@@ -77,7 +82,9 @@ The generated workbook contains the following sheets:
 
 ## Business Use Case
 
-This project simulates a reporting workflow for EV operations teams that need reliable weekly and monthly reporting for distance traveled, battery usage, charge cycles, and city-level fleet monitoring. It is useful for internal reporting, operational reviews, and dashboard-based analysis.
+This project simulates a reporting workflow for EV operations teams that need accurate weekly and monthly reporting for distance traveled, battery usage, charge cycles, and city-level fleet monitoring.
+
+It demonstrates how a traditional Excel reporting process can be automated and then extended into a dashboard-driven analytics workflow for better monitoring and decision-making.
 
 ## How to Run
 
@@ -110,24 +117,25 @@ The reporting workflow was extended into Grafana by loading EV operations data i
 - City-level analysis
 - SLA and operational status tracking
 - Filters for city and bike type
+- Detailed recent operations table
 
-This shows how the same reporting pipeline can support both Excel-based business reporting and dashboard-based monitoring.
+This shows how the same reporting pipeline can support both Excel-based business reporting and dashboard-based operational monitoring.
 
 ## Resume Bullet
 
-Built an Excel Reporting Dashboard Automation project using Python, Pandas, openpyxl, and XlsxWriter to generate multi-sheet operational reports and KPI-based Excel dashboards for EV fleet monitoring, later extending the reporting workflow into Grafana for interactive analytics.
+Built an Excel Reporting Dashboard Automation project using Python, Pandas, openpyxl, and XlsxWriter to generate multi-sheet EV fleet operational reports and KPI-based Excel dashboards, later extending the workflow into Grafana with PostgreSQL for interactive analytics and monitoring.
 
 ## Project Highlights
 
-- Automated repetitive reporting work with Python
+- Automated repetitive reporting work using Python
 - Created clean, presentation-ready Excel outputs
-- Combined data processing, Excel reporting, and dashboard-oriented analytics in one workflow
+- Combined data processing, Excel reporting, SQL-based analytics, and dashboard visualization in one workflow
 - Designed a business-focused reporting solution for EV fleet operations
 - Extended static Excel reporting into interactive Grafana monitoring
 
 ## Future Improvements
 
-- Add slicers and pivot charts
+- Add slicers and pivot charts in Excel
 - Add conditional formatting for KPI alerts
 - Export charts automatically from Python
 - Extend the reporting workflow to Power BI
